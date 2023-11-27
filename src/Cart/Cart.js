@@ -6,9 +6,9 @@ import DataContext from "../Store/Datacontext";
 const Cart = (props) => {
   const datactx = useContext(DataContext);
   let totalAmount = 0;
-  // cartctx.cart.forEach((item) => {
-  //   totalAmount = totalAmount + item.price * item.quantity;
-  // });
+  datactx.cart.forEach((item) => {
+    totalAmount = totalAmount + item.price * item.quantity;
+  });
 
   // const onAdd = (item) => {
   //   console.log(item);
@@ -32,7 +32,7 @@ const Cart = (props) => {
           <div>
             <h3>{item.medicineName}</h3>
             <div className={classes.quantity}>Description:{item.description}</div>
-            <div className={classes.price}>{item.quantity}</div>
+            <div className={classes.quantity}>Quantity:{item.quantity}</div>
             <div className={classes.price}>{item.price}</div>
           </div>
           {/* <div className={classes.actions}>
